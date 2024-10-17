@@ -1,0 +1,280 @@
+@primary-color: orangered;
+@hover-color: #e64a19;
+@bg-color: white;
+@font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+@shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+@border-color: #ddd;
+
+body {
+  font-family: @font-main;
+  background-color: @bg-color;
+  margin: 0;
+  padding: 0;
+}
+
+.dev-3049 {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.main-content {
+  flex: 3;
+  margin-right: 20px;
+}
+
+//Chi tiết Article
+.article {
+  display: flex;
+  justify-content: space-between;
+  background-color: @bg-color;
+  margin-bottom: 20px;
+  padding: 20px;
+  font-family: @font-main;
+
+  .article-img {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin-top: 10px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .info {
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 12px;
+      transition: all 0.3s ease;
+      border-radius: 0 0 5px 5px;
+    }
+    &:hover .info {
+        bottom: 0;
+    }
+  }
+
+  .article-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 20px;
+
+    h4 {
+      font-size: 25px;
+      color: black;
+      font-weight: thin;
+    }
+
+    p {
+      color: black;
+      margin: 15px 0;
+      line-height: 1.7;
+      font-size: 100%;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: @primary-color;
+      color: white;
+      text-decoration: none;
+      border-radius: 20px;
+      align-self: flex-start;
+      font-size: 13px;
+      font-family: @font-main;
+      transition: background-color 0.3s ease;
+
+      i {
+        font-size: 10px;
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        background-color: @hover-color;
+        i {
+            transform: translateX(-5px);
+        }
+      }
+    }
+  }
+}
+
+//Chi tiết của search sidebar
+.search-container {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 0;
+  margin-bottom: 50px;
+  max-width: 350px;
+  order: -1;
+
+  input[type="text"] {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px 0 0 5px;
+    font-size: 1em;
+    background-color: #f0f0f0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    background-color: #f0f0f0;
+    border: none;
+    font-size: 1.5em;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
+  }
+}
+
+.subscribe-box,
+.popular-posts {
+  background-color: @bg-color;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: @shadow;
+
+  .input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    input {
+      border: 1px solid @border-color;
+      border-radius: 5px 0 0 5px;
+      width: 100%;
+      padding: 10px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      padding: 10px;
+      background-color: @primary-color;
+      color: white;
+      border: none;
+      cursor: pointer;
+      width: 30%;
+      white-space: nowrap;
+      border: 1px solid @primary-color;
+
+      &:hover {
+        background-color: @hover-color;
+      }
+    }
+  }
+
+  #detail {
+    font-size: medium;
+  }
+
+  #note {
+    opacity: 0.5;
+    margin-top: 10px;
+  }
+}
+
+.popular-posts h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: bolder;
+}
+
+.popular-posts {
+  width: 100%;
+  height: fit-content;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  box-shadow: none;
+}
+
+.post {
+  display: flex;
+  border: 1px solid @border-color;
+  padding: 5px;
+
+  img {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+  }
+
+  .post-details {
+    a {
+      color: #333;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 15px;
+
+    }
+
+    p {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 5px;
+    }
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  .tab-cell {
+    padding: 15px;
+    text-align: center;
+    font-size: 1em;
+    color: #333;
+    background-color: #f0f0f0;
+    border: 1px solid @border-color;
+
+    &:hover {
+      background-color: #ddd;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .dev-3049 {
+    flex-direction: column;
+  }
+
+  .main-content {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}
